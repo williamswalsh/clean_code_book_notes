@@ -15,7 +15,13 @@
 
 ### Objects vs Data Structures
 - Objects hide their data behind abstractions.
-- Objects expose methods to interact with the data.
+- Objects expose methods to interact with the data - they define an access policy.
+- the concept of the object influences the access policy
+  - e.g. squares have a length and width
+    - You can't construct a square without length and width
+    - There are no width only boxes 
+    - So you make constructor which only has length and width params. 
+- Objects are data structures with a layer around them.
 - Data Structures completely expose their data.
 - Data Structures don't have functions.
 - They are virtual opposites.
