@@ -5,5 +5,5 @@ package vacations;
  * @version 25 Sep 2022
  */
 public enum CountryCode {
-
+    IE
 }

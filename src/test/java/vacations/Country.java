@@ -7,4 +7,9 @@ package vacations;
 public class Country {
     String name;
     CountryCode code;
+
+    public Country(String name, CountryCode code) {
+        this.name = name;
+        this.code = code;
+    }
 }
