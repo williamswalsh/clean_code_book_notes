@@ -9,13 +9,13 @@
 - Concurrency incurs overhead:
   - for performance
   - for code
-- **NB:** Try to separate "concurrency related" code from business logic.
+- **NB - SRP**: Try to separate "concurrency related" code from business logic.
 - Limit the scope of shared data
 - Use read only copies of data - when possible.
 - Threads should be as independent as possible.
 
 ### Methods to partition behaviour
-- Bound resources - queues, connection pools
+- Bound resources - A resource of a fixed size or number - queues, connection pools
 - Mutual exclusion - limit thread access with mutex.
 - Starvation - one thread is prohibited from proceeding due to other faster threads, leading to a thread waiting an excessive amount of time.
 - Deadlock
@@ -44,9 +44,15 @@ Readers-Writers
     - number of threads
     - threads per core - more causes more swapping - which can cause problems
     to arise
-    - 
+    - wait time
   - system configs
   - OS's executing the code
 - Test code without multi-threading first
-- Treat spurious failures as candidate threading issues
-- Could have a feedback loop to control the tunable parameters ** 
+- Treat spurious failures as "candidate threading issues". Don't ignore them.
+- **NB: Could have a feedback loop to control the tunable parameters** 
+
+Methods to affect Threading Behaviour:
+- Object.wait() 
+- Object.sleep()
+- Object.yield()
+- Object.priority()
